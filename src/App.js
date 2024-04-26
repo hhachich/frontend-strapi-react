@@ -1,21 +1,20 @@
-import './App.css';
-import axios from 'axios';
+import "./App.css";
+import { fetchApi } from "./fetchApi";
 
 function App() {
-
-  // pour ajouter les relation comme les images on ajoute le populate
-  const fetchPoducts = async()=>{
-    const res = await axios.get(process.env.REACT_APP_API_URL+"/products?populate=*",{
-      headers:{
-        Authorization : "bearer " + process.env.REACT_APP_API_TOKEN
-      }
-    })
-    console.log(res.data.data)
-  }
-  fetchPoducts()
+  const fetchProducts = async () => {
+    const res = await fetchApi.get("/products?populate=*");
+    console.log(res.data.data);
+  };
+  fetchProducts();
+  const fetchCategorys = async () => {
+    const res = await fetchApi.get("/categories?populate=*");
+    console.log(res.data.data);
+  };
+  fetchCategorys();
   return (
     <>
-        <p>Hello</p>
+      <p>Hello</p>
     </>
   );
 }
