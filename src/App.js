@@ -1,27 +1,14 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { fetchApi } from "./fetchApi";
+import { useFetch } from "./hooks/useFetch";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [categorys, setCategorys] = useState([]);
-
-  const fetchProducts = async () => {
-    const res = await fetchApi.get("/products?populate=*");
-    setProducts(res.data.data);
-  };
+  const { data, loading, error } = useFetch("/products");
   useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const fetchCategorys = async () => {
-    const res = await fetchApi.get("/categories?populate=*");
-    setCategorys(res.data.data);
-  };
-  useEffect(() => {
-    fetchCategorys();
-  }, []);
-
+    data && console.log(data);
+  }, [data]);
   return (
     <>
       <p>Hello</p>
