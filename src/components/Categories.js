@@ -11,7 +11,6 @@ function Categories(props) {
 
   useEffect(() => {
     data && setCategories(data);
-    console.log(categories);
   }, [data]);
 
   return (

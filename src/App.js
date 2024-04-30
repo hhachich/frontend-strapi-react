@@ -7,7 +7,7 @@ import StoreContext from "./hooks/storeContext";
 function App() {
   const [filter, setFilter] = useState("");
   useEffect(() => {
-    console.log(filter)
+    console.log("filter : ", filter)
   }, [filter])
   return (
     <>

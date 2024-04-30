@@ -8,7 +8,6 @@ function Products(props) {
   const { data, loading, error } = useFetch("/products");
   useEffect(() => {
     data && setProducts(data);
-    console.log(products);
   }, [data]);
 
   return (
