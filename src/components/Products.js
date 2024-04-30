@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import "./Products.css"
-function Products(props) {
+function Products() {
 
   const [products, setProducts] = useState([]);
 

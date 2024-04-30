@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import "./Categories.css"
 import Checkbox from "./Checkbox";
-import StoreContext from "../hooks/storeContext";
-function Categories(props) {
+function Categories() {
 
   const [categories, setCategories] = useState([]);
 
