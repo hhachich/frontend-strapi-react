@@ -1,10 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Checkbox.css'
 import StoreContext from '../hooks/storeContext';
+import qs from 'qs';
 function Checkbox({ category }) {
-    const { setFilter } = useContext(StoreContext)
+
+    const { setFilter, selectedCategories, setSelectedCategories } = useContext(StoreContext)
+
+    useEffect(() => {
+        const query = qs.stringify({
+            filters: {
+                categories: {
+                    id: {
+                        $in: selectedCategories
+                    }
+                }
+            }
+        }
+        )
+        console.log(query)
+        setFilter(process.env.REACT_APP_API_URL + "/products?populate=*&" + query)
+    }, [selectedCategories])
+
     const handleFilterCategory = (e) => {
-        setFilter("http://localhost:1337/api/products?populate=*&filters[categories][id][$eq]=" + e.target.dataset.category)
+        const selectedID = e.target.dataset.category;
+        const isChecked = e.target.checked;
+        setSelectedCategories(selectedCategories => {
+            if (isChecked)
+                return [...selectedCategories, selectedID]
+            return selectedCategories.filter(id => id != selectedID)
+        })
+
     }
     return (
         <>

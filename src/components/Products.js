@@ -15,18 +15,21 @@ function Products() {
 
 
   return (
-    <div className="products">
-      {loading
-        ? "loading ..."
-        : products.map((product) => (
-          <div className="product" key={product.id}>
-            <h1 className="product-title">{product.attributes.title}</h1>
-            <div className="product-price">{product.attributes.price}</div>
-            <img className="product-image" src={process.env.REACT_APP_APP_URL + product.attributes.image.data.attributes.url}></img>
-            <div className="product-desc">{product.attributes.description}</div>
-          </div>
-        ))}
-    </div>
+    <>
+      <div className="products">
+        {loading
+          ? "loading ..."
+          : products.map((product) => (
+            <div className="product" key={product.id}>
+              <h1 className="product-title">{product.attributes.title}</h1>
+              <div className="product-price">{product.attributes.price}</div>
+              <img className="product-image" src={process.env.REACT_APP_APP_URL + product.attributes.image.data.attributes.url}></img>
+              <div className="product-desc">{product.attributes.description}</div>
+            </div>
+
+          ))}
+      </div>
+    </>
   );
 }
 
