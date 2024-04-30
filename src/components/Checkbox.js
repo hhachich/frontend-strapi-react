@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import './Checkbox.css'
 import StoreContext from '../hooks/storeContext';
 function Checkbox({ category }) {
-    console.log(category)
-    const { filter } = useContext(StoreContext)
+    const { setFilter } = useContext(StoreContext)
     const handleFilterCategory = (e) => {
-        console.log(e.target.checked)
+        console.log("Checkbox setFilter : " + e.target.checked)
+        setFilter(e.target.checked)
     }
     return (
         <>
@@ -13,7 +13,6 @@ function Checkbox({ category }) {
                 <input type="checkbox" onChange={handleFilterCategory} />
                 <div className="toggler-slider">
                     <div className="toggler-knob"></div>
-
                 </div>
             </label>
             <div className="badge">{category.attributes.title}</div>
