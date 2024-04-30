@@ -9,7 +9,7 @@ export const useFetch = (endPoint) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetchApi.get(endPoint + "?populate=*");
+        const res = await fetchApi.get(endPoint);
         setData(res.data.data);
       } catch (error) {
         setError(true);

@@ -5,7 +5,7 @@ import Products from "./components/Products";
 import StoreContext from "./hooks/storeContext";
 
 function App() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("/products?populate=*&filters[categories][id][$eq]=1");
   useEffect(() => {
     console.log("filter : ", filter)
   }, [filter])

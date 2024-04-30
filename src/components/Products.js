@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+import StoreContext from "../hooks/storeContext";
 import "./Products.css"
+
 function Products() {
 
+  const { filter } = useContext(StoreContext)
   const [products, setProducts] = useState([]);
+  const { data, loading, error } = useFetch(filter);
 
-  const { data, loading, error } = useFetch("/products");
   useEffect(() => {
     data && setProducts(data);
   }, [data]);
+
 
   return (
     <div className="products">

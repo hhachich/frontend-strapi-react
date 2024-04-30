@@ -6,7 +6,7 @@ function Categories() {
 
   const [categories, setCategories] = useState([]);
 
-  const { data, loading, error } = useFetch("/Categories");
+  const { data, loading, error } = useFetch("/Categories?populate=*");
 
   useEffect(() => {
     data && setCategories(data);
