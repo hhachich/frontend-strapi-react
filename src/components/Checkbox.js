@@ -1,10 +1,22 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import './Checkbox.css'
+import StoreContext from '../hooks/storeContext';
 function Checkbox({ category }) {
     console.log(category)
+    const { filter } = useContext(StoreContext)
+    const handleFilterCategory = (e) => {
+        console.log(e.target.checked)
+    }
     return (
         <>
-            <h1>{category.attributes.title}</h1>
+            <label className="toggler-wrapper style-1">
+                <input type="checkbox" onChange={handleFilterCategory} />
+                <div className="toggler-slider">
+                    <div className="toggler-knob"></div>
+
+                </div>
+            </label>
+            <div className="badge">{category.attributes.title}</div>
         </>
     );
 }
