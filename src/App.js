@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Categories from "./components/Categories";
 import Products from "./components/Products";
-import TestCard from "./components/TestCard";
 import StoreContext from "./hooks/storeContext";
+import Cart from "./components/Cart";
 
 function App() {
   const [filter, setFilter] = useState("/products?populate=*");
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       < h1>Application</h1>
+      <Cart />
       <StoreContext.Provider value={{ filter, setFilter, selectedCategories, setSelectedCategories }}>
 
         <Categories />

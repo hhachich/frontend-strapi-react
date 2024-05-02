@@ -76,3 +76,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # pour utiliser query string
 
 `npm i qs`
+
+# pour utiliser react-icons
+
+`npm i react-icons`
+
+# pour utiliser Redux Toolkit pour l'ajout au panier
+
+`npm install react-redux`
+
+# pour persisiter les donners dans le panier
+
+`npm installredux-persist`

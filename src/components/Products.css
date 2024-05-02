@@ -23,7 +23,8 @@ h1 {
   overflow: hidden;
   max-width: 100%;
   position: center;
-  /* border: 5px solid black; */
+  aspect-ratio: 1/1;
+  width: 300px;
 }
 .product .product-desc {
   font-size: 0.8rem;
@@ -39,8 +40,21 @@ h1 {
 
 .product .product-price {
   position: absolute;
-  background-color: bisque;
+  background-color: brown;
   padding: 5px 20px;
   border: 3px solid black;
   border-radius: 30px 10px;
+}
+
+.product-btn {
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+.product-btn:hover {
+  background-color: rgb(224, 123, 123);
 }
