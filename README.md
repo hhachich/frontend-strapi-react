@@ -1,20 +1,25 @@
 # Info sur le projet
 
-## version de Node
+## Version de Node
 
 `v20.12.2`
 
-## version de React
+## Version de React
 
 `18.3.1`
 
-## version de npm
+## Version de npm
 
 `10.5.0`
 
-## inspirer du tutorial :
+## Inspirer du tutorial :
 
 `https://www.youtube.com/watch?v=K3AwVU3t4ZI`
+
+## Backend utiliser Strapi
+
+`https://github.com/hhachich/backend-strapi-react
+`
 
 # Installation du projet
 
