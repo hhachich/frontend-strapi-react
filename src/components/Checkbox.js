@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Checkbox.css'
 import StoreContext from '../hooks/storeContext';
 import qs from 'qs';
@@ -27,7 +27,7 @@ function Checkbox({ category }) {
         setSelectedCategories(selectedCategories => {
             if (isChecked)
                 return [...selectedCategories, selectedID]
-            return selectedCategories.filter(id => id != selectedID)
+            return selectedCategories.filter(id => id !== selectedID)
         })
 
     }
